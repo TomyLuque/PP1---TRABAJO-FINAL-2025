@@ -1,0 +1,7 @@
+Django==4.2
+psycopg2-binary
+django-allauth>=0.58.0
+django-crispy-forms
+crispy-bootstrap4
+
+

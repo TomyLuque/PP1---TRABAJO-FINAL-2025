@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Eliminar Cliente</h1>
+
+<p>¿Seguro que querés eliminar a <strong>{{ object }}</strong>?</p>
+
+<form method="post">
+    {% csrf_token %}
+    <button class="btn btn-danger">
+        <i class="fas fa-trash"></i> Eliminar
+    </button>
+    <a href="{% url 'clientes:lista' %}" class="btn btn-secondary">
+        <i class="fas fa-arrow-left"></i> Cancelar
+    </a>
+</form>
+{% endblock %}

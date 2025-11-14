@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+{% block title %}Iniciar Sesión{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center mt-5">
+    <div class="col-md-5">
+
+        <div class="card shadow">
+            <div class="card-header bg-primary text-white text-center">
+                <h4><i class="fa-solid fa-right-to-bracket"></i> Iniciar Sesión</h4>
+            </div>
+
+            <div class="card-body">
+                <form method="post" action="{% url 'account_login' %}">
+                    {% csrf_token %}
+                    {{ form|crispy }}
+
+                    <button type="submit" class="btn btn-primary btn-block mt-3">
+                        <i class="fa-solid fa-arrow-right-to-bracket"></i> Entrar
+                    </button>
+                </form>
+            </div>
+
+            <div class="card-footer text-center">
+                <a href="{% url 'inicio' %}">
+                    <i class="fa-solid fa-arrow-left"></i> Volver al inicio
+                </a>
+            </div>
+        </div>
+
+    </div>
+</div>
+{% endblock %}

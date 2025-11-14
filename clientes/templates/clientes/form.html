@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<h1 class="mb-4">
+    {% if object %}Editar Cliente{% else %}Nuevo Cliente{% endif %}
+</h1>
+
+<form method="post" class="card p-4 shadow-sm">
+    {% csrf_token %}
+    {{ form|crispy }}
+
+    <button type="submit" class="btn btn-success">
+        <i class="fas fa-save"></i> Guardar
+    </button>
+
+    <a href="{% url 'clientes:lista' %}" class="btn btn-secondary">
+        <i class="fas fa-arrow-left"></i> Cancelar
+    </a>
+</form>
+{% endblock %}

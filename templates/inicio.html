@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+{% block title %}Inicio - Sistema de Ventas{% endblock %}
+
+{% block content %}
+
+<div class="container mt-5">
+
+    <h1 class="text-center mb-4">
+        <i class="fa-solid fa-gauge-high"></i> Dashboard
+    </h1>
+
+    <p class="text-center lead mb-5">Bienvenido, <strong>{{ user.username }}</strong>. Elegí una sección para continuar.</p>
+
+
+    <div class="row text-center">
+
+        <div class="col-md-4 mb-4">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <i class="fa-solid fa-box fa-3x text-primary mb-3"></i>
+                    <h4>Productos</h4>
+                    <p class="display-6">{{ productos_count }}</p>
+                    <a href="{% url 'productos:lista' %}" class="btn btn-primary btn-sm">
+                        <i class="fa-solid fa-box-open"></i> Ver productos
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-4">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <i class="fa-solid fa-users fa-3x text-success mb-3"></i>
+                    <h4>Clientes</h4>
+                    <p class="display-6">{{ clientes_count }}</p>
+                    <a href="{% url 'clientes:lista' %}" class="btn btn-success btn-sm">
+                        <i class="fa-solid fa-user"></i> Ver clientes
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-4">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <i class="fa-solid fa-cart-shopping fa-3x text-warning mb-3"></i>
+                    <h4>Ventas</h4>
+                    <p class="display-6">{{ ventas_count }}</p>
+                    <a href="{% url 'ventas_lista' %}" class="btn btn-warning btn-sm text-white">
+                        <i class="fa-solid fa-file-invoice"></i> Ver ventas
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div

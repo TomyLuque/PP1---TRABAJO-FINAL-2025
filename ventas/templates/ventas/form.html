@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+{% block title %}Nueva Venta - Sistema de Ventas{% endblock %}
+
+{% block content %}
+<h1 class="mb-3">
+    <i class="fas fa-cart-plus"></i> Nueva Venta
+</h1>
+
+<form method="post">
+    {% csrf_token %}
+
+    <div class="card mb-4">
+        <div class="card-header">
+            <strong>Datos del Cliente</strong>
+        </div>
+        <div class="card-body">
+            {{ form|crispy }}
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-header">
+            <strong>Productos</strong>
+        </div>
+        <div class="card-body">
+
+            {{ formset.management_form }}
+
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Producto</th>
+                        <th>Cantidad</th>
+                        <th>Precio unitario</th>
+                        <th>Subtotal</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for f in formset %}
+                    <tr>
+                        <td>{{ f.producto }}</td>
+                        <td>{{ f.cantidad }}</td>
+                        <td>{{ f.precio_unitario }}</td>
+                        <td>{{ f.subtotal }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+
+    <button type="submit" class="btn btn-success mt-3">
+        <i class="fas fa-save"></i> Guardar Venta
+    </button>
+
+    <a href="{% url 'ventas_lista' %}" class="btn btn-secondary mt-3">
+        <i class="fas fa-arrow-left"></i> Cancelar
+    </a>
+</form>
+{% endblock %}
