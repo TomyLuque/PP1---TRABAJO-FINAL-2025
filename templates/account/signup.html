@@ -8,34 +8,21 @@
     <div class="col-md-6">
 
         <div class="card shadow">
-            <div class="card-header bg-success text-white text-center">
-                <h4><i class="fa-solid fa-user-plus"></i> Crear Cuenta</h4>
+            <div class="card-header bg-warning text-dark text-center">
+                <h4><i class="fas fa-exclamation-triangle"></i> Registro Deshabilitado</h4>
             </div>
 
-            <div class="card-body">
-
-                {% if not ACCOUNT_ALLOW_REGISTRATION %}
-                    <div class="alert alert-danger text-center">
-                        <i class="fa-solid fa-ban"></i>  
-                        El registro de nuevos usuarios está deshabilitado.
-                    </div>
-                {% endif %}
-
-                <form method="post" action="{% url 'account_signup' %}">
-                    {% csrf_token %}
-                    {{ form|crispy }}
-
-                    <button type="submit" class="btn btn-success btn-block mt-2"
-                        {% if not ACCOUNT_ALLOW_REGISTRATION %}disabled{% endif %}>
-                        <i class="fa-solid fa-user-plus"></i> Registrarme
-                    </button>
-                </form>
-
+            <div class="card-body text-center">
+                <div class="alert alert-warning">
+                    <i class="fas fa-lock"></i>  
+                    <p class="mb-0">El registro de nuevos usuarios está deshabilitado.</p>
+                    <p class="mb-0 mt-2">Por favor, contacte al administrador del sistema.</p>
+                </div>
             </div>
 
             <div class="card-footer text-center">
-                <a href="{% url 'account_login' %}">
-                    <i class="fa-solid fa-arrow-left"></i> Volver al login
+                <a href="{% url 'account_login' %}" class="btn btn-primary">
+                    <i class="fas fa-arrow-left"></i> Volver al login
                 </a>
             </div>
         </div>
