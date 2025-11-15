@@ -15,7 +15,7 @@ Este proyecto contiene un sistema de ventas desarrollado en Django y PostgreSQL,
 
 1. Clonar el repositorio:
 
-git clone <URL_DEL_REPOSITORIO>
+git clone https://github.com/TomyLuque/PP1---TRABAJO-FINAL-2025.git
 cd sistemaVentas
 
 2. Levantar el proyecto con Docker:
