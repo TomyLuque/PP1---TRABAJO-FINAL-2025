@@ -2,6 +2,7 @@
 
 Este proyecto contiene un sistema de ventas desarrollado en Django y PostgreSQL, completamente contenerizado con Docker y docker-compose.
 
+Doc: https://docs.google.com/document/d/10lKzdjTAU3X82t-OO3aJ2OgSPcwsxtiwzdu0IDueRtw/edit?usp=sharing
 ---
 
 ## requisitos 
