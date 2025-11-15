@@ -7,9 +7,14 @@
     <i class="fa-solid fa-cart-shopping"></i> Ventas
 </h1>
 
-<a href="{% url 'ventas_nueva' %}" class="btn btn-primary mb-3">
-    <i class="fa-solid fa-plus"></i> Nueva Venta
-</a>
+<div class="d-flex mb-3">
+    <a href="{% url 'ventas_nueva' %}" class="btn btn-primary mr-2">
+        <i class="fa-solid fa-plus"></i> Nueva Venta
+    </a>
+    <a href="{% url 'ventas_grafico' %}" class="btn btn-info">
+        <i class="fa-solid fa-chart-line"></i> Ver gráfico de ventas por día
+    </a>
+</div>
 
 <table class="table table-bordered table-striped">
     <thead class="thead-dark">
