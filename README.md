@@ -53,4 +53,22 @@ esto elimina los volumenes del docker asociados a la base de datos y permitira i
 
 en teoria deberias poder levantar el sistema con un solo comando 
 
+---
+
+## superusuario
+
+el sistema tiene el registro de usuario deshabilitado (solo login) para eso
+es necesario en una base nueva crear un nuevo superusuario:
+docker-compose exec web python manage.py createsuperuser
+
+## Flujo básico de uso
+
+1. crear un usuario administrador con `createsuperuser` (si no existe)
+2. ingresar al `http://localhost:8000` e iniciar sesión
+3. cargar productos.
+4. cargar clientes.
+5. registrar ventas utilizando el formulario con items.
+6. verificar el impacto en el stock y los totales de ventas desde las pantallas de listado y detalle
+
+
 
